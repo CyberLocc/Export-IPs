@@ -1,4 +1,5 @@
 #!/bin/bash
+### Must be Run as "source export.sh" due to issues with sub procresses not allowing the script to source itself. ###
 
 # Function to get IP address of a specific interface
 get_ip() {
