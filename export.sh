@@ -30,6 +30,6 @@ export URL="http://$IP/"
 
 # Print instructions
 echo "Environment variables set:"
-echo "Attack IP: $MY_IP ($INTERFACE)"
+echo "My IP: $MY_IP ($INTERFACE)"
 echo "Target IP: $IP"
 echo "Target URL: $URL"
