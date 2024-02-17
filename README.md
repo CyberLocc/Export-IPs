@@ -8,6 +8,8 @@ Granted, it's easy enough to export these every time you open a new shell. I tho
 
 This script will check for the tun0 IP. If it does not detect tun0, it will pull eth0 instead. It sets this variable as $MY_IP for the attack box IP. It will then prompt for the target IP and store this under $IP. It will then take the $IP and give us a variable of $URL, which is http://$IP/ for URL usage.
 
-## IMPORTANT!!! 
+
+
+### IMPORTANT!!! 
 Due to the limitations of this script creating a child process, it must be run with "source export.sh" as sourcing from the script is not possible, as far as I know (YET! But I am open to ideas to fix this).
  
