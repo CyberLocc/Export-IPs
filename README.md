@@ -1,4 +1,5 @@
-Export-IPs
+# Export-IPs
+
 A Simple Bash Script to Export IP addresses.
 
 I was watching a S1ren video where she was exporting the victim's IP address as an environment variable. I thought this was a wonderful idea so that my notes could just reflect $IP instead of constantly changing the IP address for each. She did the same for URLs.
