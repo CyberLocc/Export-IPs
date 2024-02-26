@@ -1,7 +1,4 @@
 #!/bin/bash
-echo "===================================================================================="
-echo "                                  +++ Setup.SH +++"
-echo "===================================================================================="
 
 # Function to get IP address of a specific interface
 get_ip() {
@@ -14,6 +11,10 @@ create_project_folders() {
     local projectName="$1"
     mkdir -p ~/"$projectName"/{enum,loot,privesc,exploit}
 }
+
+echo "===================================================================================="
+echo "                                  +++ Setup.SH +++"
+echo "===================================================================================="
 
 # Check if script is running as root
 if [[ $EUID -eq 0 ]]; then
@@ -46,12 +47,23 @@ export LH="$LH"
 export URL="http://$IP"
 export LPORT="$LPORT"
 
-# Append variable assignments to ~/.zshrc
-echo "export PNAME=\"$PNAME\"" >> ~/.zshrc
-echo "export IP=\"$IP\"" >> ~/.zshrc
-echo "export LH=\"$LH\"" >> ~/.zshrc
-echo "export URL=\"$URL\"" >> ~/.zshrc
-echo "export LPORT=\"$LPORT\"" >> ~/.zshrc
+# Interactive Setup
+echo "Interactive Setup:"
+echo "=================="
+echo "Project Name: $PNAME"
+echo "Target IP address: $IP"
+echo "Desired LPORT: $LPORT"
+echo
+
+# Verifying Interfaces
+echo "Checking network interface..."
+if [[ -z $INTERFACE ]]; then
+    echo "Error: No suitable network interface found."
+    exit 1
+else
+    echo "Network interface detected: $INTERFACE"
+fi
+echo
 
 # Ask if user wants to add entry to /etc/hosts
 read -p "Do you want to add an entry to /etc/hosts for $IP $PNAME? [Y/N]: " addHosts
@@ -73,6 +85,7 @@ echo
 echo "===================================================================================="
 echo "                           +++ Project Setup Complete +++"
 echo "===================================================================================="
+echo
 echo "Environment variables set and saved to ~/.zshrc:"
 echo "Project Name: $PNAME" 
 echo "Project Folders Created at ~/$PNAME/"
@@ -80,6 +93,7 @@ echo "Target IP: $IP"
 echo "Target URL: $URL"
 echo "LH: $LH ($INTERFACE)"
 echo "Port: $LPORT"
+echo
 echo "===================================================================================="
 echo "                     +++ Please Launch New Shell for Changes +++"
 echo "===================================================================================="
