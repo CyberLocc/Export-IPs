@@ -1,6 +1,6 @@
 # Project Setup Script Documentation
 
-##Overview
+## Overview
 
 The Project Setup Script is a bash script designed to streamline the setup process for new projects or penetration testing engagements. It automates the creation of project directories, exports essential environment variables, and performs other repetitive tasks, reducing manual effort and potential errors.
 
@@ -15,7 +15,7 @@ Interactive Setup: The script offers an interactive mode where users are guided 
 
 Error Handling: Robust error handling ensures graceful handling of unexpected situations, such as network interface detection failures or directory creation errors.
 
-Backup Configuration: Users have the option to backup existing configuration files before making any modifications, providing a safety net in case of errors.
+The Common_Commands repository leverages this setup, employing a standardized folder structure and environment variables. This framework streamlines the integration of scripts and commands, reducing the necessity for manual alterations or adjustments upon completing the setup.
 
 ## Usage
 Setup: Run the script using source or ./ to execute in the current shell environment.
@@ -37,25 +37,6 @@ $ Enter Desired LPORT: 4444
 $ Do you want to add an entry to /etc/hosts for 192.168.1.10 example_project? [Y/N]: Y
 $ Please enter your sudo password to adjust hosts.
 ```
-
-## Results
-After running the script, the following actions are performed:
-
-Project Folders Created: The script creates the following folders within the user's home directory, under the project name provided:
-
-enum: Directory for storing enumeration results.
-loot: Directory for storing collected loot or data.
-privesc: Directory for storing privilege escalation findings.
-exploit: Directory for storing exploit scripts or payloads.
-Environment Variables Set: Several environment variables are exported for use throughout the session:
-
-PNAME: Project name provided by the user.
-IP: Target IP address entered by the user.
-LH: Local host IP address (detected automatically).
-URL: Target URL constructed from the IP address.
-LPORT: Desired local port number entered by the user.
-
-My [Common_Commands](https://github.com/CyberLocc/Common_Commands) repository, employs a standardized folder structure and environment variables. This structure facilitates seamless integration with scripts and commands, minimizing the need for manual adjustments or modifications when this setup is completed. 
 
 ## Troubleshooting
 
