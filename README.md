@@ -1,15 +1,13 @@
-# Export-IPs
+# Project Setup
 
-### A Simple Bash Script to Export IP addresses.
+### A Simple Bash Script to Setup for a Box/Project.
 
-I was watching a S1ren video where she was exporting the victim's IP address as an environment variable. I thought this was a wonderful idea so that my notes could just reflect $IP instead of constantly changing the IP address for each. She did the same for URLs.
+It all started with S1ren's idea of using export to set environment variables for $IP and $URL. Initially, I aimed to create a straightforward script to export these variables along with the Attack Box IP. However, I soon realized the potential to expand upon this concept.
 
-Granted, it's easy enough to export these every time you open a new shell. I thought it would be nice to have a script do this and add on the ability to pull a $MY_IP variable. That way, where I had to previously declare the attack box IP, I can just use $MY_IP. Now, as I switch between CTFs, whether doing them locally or over a VPN connection, this created another issue, and thus, I made this script.
+A significant portion of my workflow involves organizing notes, outputs from various tools, and other data into specific folders. This requires creating directories, exporting essential IPs, and occasionally modifying the hosts file.
 
-This script will check for the tun0 IP. If it does not detect tun0, it will pull eth0 instead. It sets this variable as $MY_IP for the attack box IP. It will then prompt for the target IP and store this under $IP. It will then take the $IP and give us a variable of $URL, which is http://$IP/ for URL usage.
+You might think, "Adding a folder for Nmap output or creating directories isn't difficult. These are just small, repetitive tasks that take seconds." Yet, as these tasks accumulate, they consume more time, introduce errors, and can turn minutes into hours.
 
+So, I pondered, why not automate these repetitive tasks? Why not create a script that captures crucial variables, persists them throughout my session, and handles the repetitive work? With such a script, my notes could utilize these variables, eliminating the need to manually type paths or IPs—well, at least significantly reducing it.
 
-
-### IMPORTANT!!! 
-Due to the limitations of this script creating a child process, it must be run with "source export.sh" as sourcing from the script is not possible, as far as I know (YET! But I am open to ideas to fix this).
- 
+Thank you for taking the time to explore this project. I hope you find value in it and perhaps even suggest additional features to enhance its utility. After all, it's an ongoing endeavor aimed at minimizing wasted time.    
