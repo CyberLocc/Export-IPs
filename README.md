@@ -20,7 +20,7 @@ The Common_Commands repository leverages this setup, employing a standardized fo
 ## Usage
 Setup: Run the script using source or ./ to execute in the current shell environment.
 ```
-./project_setup.sh
+./setup.sh
 ```
 Follow Prompts: The script will prompt you for the project name, target IP address, desired LPORT, and other configuration details. Enter the requested information as prompted.
 
