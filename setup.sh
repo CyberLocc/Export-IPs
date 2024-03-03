@@ -9,7 +9,7 @@ get_ip() {
 # Function to create project folders
 create_project_folders() {
     local projectName="$1"
-    mkdir -p ~/"$projectName"/{enum,loot,privesc,exploit}
+    mkdir -p ~/Projects/"$projectName"/{enum,loot,privesc,exploit}
 }
 
 echo "===================================================================================="
