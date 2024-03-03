@@ -66,16 +66,26 @@ fi
 echo
 
 # Ask if user wants to add entry to /etc/hosts
-read -p "Do you want to add an entry to /etc/hosts for $IP $PNAME? [Y/N]: " addHosts
+read -p "Do you want to add an entry to /etc/hosts for $IP? [Y/N]: " addHosts
 
 if [[ $addHosts =~ ^[Yy]$ ]]; then
+    # Ask if user wants to specify the domain extension
+    read -p "Do you want to specify a domain extension for the hosts file? (Default: com) [Y/N]: " specifyExtension
+
+    if [[ $specifyExtension =~ ^[Yy]$ ]]; then
+        read -p "Enter the desired domain extension (e.g., com, org, net): " domainExtension
+    else
+        domainExtension="com"
+    fi
+
     # Add entry to /etc/hosts
-    echo "$IP $PNAME" | $SUDO tee -a /etc/hosts >/dev/null
+    echo "$IP.$domainExtension $PNAME" | $SUDO tee -a /etc/hosts >/dev/null
     echo "Entry added to /etc/hosts."
     if [[ $SUDO == "sudo" ]]; then
         echo "Please enter your sudo password to adjust hosts."
     fi
 fi
+
 
 # Create project folders
 create_project_folders "$PNAME"
