@@ -53,4 +53,4 @@ Contributions to the Project Setup Script are welcome! If you have ideas for new
 Contributions to the Project Setup Script are welcome! If you have ideas for new features, improvements, or bug fixes, please submit a pull request or open an issue on the project's GitHub repository.
 
 ## License
-This script is released under the MIT License. See the LICENSE file for details.
+This script is released under the MIT License.
